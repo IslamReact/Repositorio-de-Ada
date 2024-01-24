@@ -9,6 +9,7 @@ DAO/EnrolmentDAO.class
 Controller/GeneralController.class
 Main/SerpisFP_IE28.class
 Entity/Enrolment.class
+Controller/ProjectController.class
 DAO/ModuleDAO.class
 Tools/Tools.class
 Entity/ModuleFP.class

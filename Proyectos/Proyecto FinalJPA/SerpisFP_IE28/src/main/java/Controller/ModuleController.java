@@ -4,9 +4,13 @@
  */
 package Controller;
 
+import DAO.ModuleDAO;
 import Entity.Enrolment;
 import Entity.ModuleFP;
+import static Tools.Tools.getIntInput;
 import java.util.List;
+import java.util.Scanner;
+import javax.persistence.EntityManager;
 
 /**
  *
@@ -34,4 +38,41 @@ public class ModuleController {
         }
         System.out.println("+-------------------------------------------+");
     }
+    
+    /**
+     * 
+     * @param em
+     * @param scanner
+     * @return 
+     */
+    public static ModuleFP askForModule(EntityManager em, Scanner scanner) {
+        ModuleDAO moduleDAO = new ModuleDAO(em);
+        List<ModuleFP> moduleList = moduleDAO.selectAll();
+
+        System.out.println("\nAvailable Modules: ⬇️");
+        displayModuleList(moduleList);
+
+        while (true) {
+            System.out.print("\nEnter the code of the module: ");
+            int moduleCode = getIntInput(scanner);
+
+            ModuleFP selectedModule = moduleDAO.getModuleById(moduleCode);
+
+            if (selectedModule != null) {
+                return selectedModule;
+            } else {
+                System.out.println("[❌]  This module doesn't exist. Please enter a valid module code.");
+            }
+        }
+    }
+    /**
+     * 
+     * @param moduleList 
+     */
+    public static void displayModuleList(List<ModuleFP> moduleList) {
+        for (ModuleFP module : moduleList) {
+            System.out.println(module.toString());
+        }
+    }
+
 }

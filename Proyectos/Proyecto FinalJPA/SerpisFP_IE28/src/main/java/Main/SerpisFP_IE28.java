@@ -5,7 +5,13 @@ package Main;
 
 //Controller import
 import static Controller.GeneralController.handleDeleteAllDataOption;
+import static Controller.GroupController.displayGroupList;
+import static Controller.ModuleController.askForModule;
+import static Controller.ModuleController.displayModuleList;
 import static Controller.ModuleController.listEnrolmentsRealtionatedWithModule;
+import static Controller.ProjectController.displayProjectList;
+import static Controller.StudentController.askForStudent;
+import static Controller.StudentController.displayStudentList;
 import static Controller.StudentController.listEnrolmentsAndProjectsForStudent;
 import static Controller.StudentController.listStudentsRealtionatedWithGroup;
 import static Controller.StudentController.listStudentsRealtionatedWithProjects;
@@ -138,8 +144,9 @@ public class SerpisFP_IE28 {
                                     System.out.println("Adding new elements to enrolment table...");
 
                                     // Get student and module information
-                                    Student student = studentDAO.getStudentById(getStudentFromUser(scanner));
-                                    ModuleFP module = moduleDAO.getModuleById(getModuleFromUser(scanner));
+                                    Student student = askForStudent(em, scanner);
+                                    ModuleFP module = askForModule(em, scanner);
+
                                     if (module == null || student == null) {
                                         System.out.println("\n[❌]  Please, check if this student exists or module exists.");
                                     } else {
@@ -174,7 +181,7 @@ public class SerpisFP_IE28 {
                                 break;
                             case 4:
                                 // Add Proyecto table
-                                if (studentDAO.getCountStudentsWithoutProjects() == 0) {
+                                if (studentDAO.getStudentCount() == projectDAO.countAllProjects()) {
                                     System.out.println("Add students first and then you will be able to add projects.");
                                 } else {
                                     System.out.println("Adding new elements to project table...");
@@ -486,6 +493,10 @@ public class SerpisFP_IE28 {
 
                                 switch (deleteStudentOption) {
                                     case 1:
+                                        List<Student> allStudents = studentDAO.getAllStudents();
+                                        System.out.println("List of Students: ⬇️");
+                                        displayStudentList(allStudents);
+
                                         int deletedStudents = 0;
                                         ArrayList<Integer> studentsToDelete = askAndStoreGroupIdsInArray(scanner, true);
 
@@ -496,8 +507,11 @@ public class SerpisFP_IE28 {
                                             }
                                         }
 
-                                        if (deletedStudents == studentsToDelete.size()) {
+                                        if (deletedStudents == studentsToDelete.size() && deletedStudents != 0) {
                                             System.out.println("\n[✅]  All Students deleted successfully.");
+                                        } else {
+                                            System.out.println("\n[❌]  Not All Students were deleted.");
+
                                         }
                                         break;
                                     case 0:
@@ -510,14 +524,14 @@ public class SerpisFP_IE28 {
                             case 2:
                                 System.out.println("\nYou are going to unenroll a student: ");
 
-                                Student studentToDelete = studentDAO.getStudentById(getStudentFromUser(scanner));
-                                ModuleFP moduleToDelete = moduleDAO.getModuleById(getModuleFromUser(scanner));
+                                Student studentToDelete = askForStudent(em, scanner);
+                                ModuleFP moduleToDelete = (studentToDelete != null) ? askForModule(em, scanner) : null;
+
                                 if (moduleToDelete == null || studentToDelete == null) {
                                     System.out.println("\n[❌]  Please, check if this student exists or module exists.");
                                 } else {
-
-                                    // Find and delete the enrolment
                                     Enrolment enrolmentToDelete = enrolmentDAO.getEnrolmentById(studentToDelete, moduleToDelete);
+
                                     if (enrolmentToDelete != null) {
                                         enrolmentDAO.deleteEnrolment(enrolmentToDelete);
                                         System.out.println("[✅]  Enrolment deleted successfully.");
@@ -534,6 +548,11 @@ public class SerpisFP_IE28 {
 
                                 switch (deleteModuleOption) {
                                     case 1:
+
+                                        List<ModuleFP> allModules = moduleDAO.selectAll();
+                                        System.out.println("List of Modules: ⬇️");
+                                        displayModuleList(allModules);
+
                                         int deletedModules = 0;
                                         ArrayList<Integer> modulesToDelete = askAndStoreGroupIdsInArray(scanner, false);
 
@@ -546,9 +565,9 @@ public class SerpisFP_IE28 {
                                             }
                                         }
 
-                                        if (deletedModules == modulesToDelete.size()) {
+                                        if (deletedModules == modulesToDelete.size() && deletedModules != 0 ) {
                                             System.out.println("\n[✅]  All modules deleted successfully.");
-                                        } else {
+                                        } else if(deletedModules != 0 ) {
                                             System.out.println("\n[❌]  Oops! There was an error while trying to delete some modules.");
                                         }
 
@@ -580,6 +599,11 @@ public class SerpisFP_IE28 {
 
                                 switch (deleteProjectOption) {
                                     case 1:
+
+                                        List<Project> allProjects = projectDAO.selectAll();
+                                        System.out.println("List of Projects: ⬇️");
+                                        displayProjectList(allProjects);
+
                                         int deletedProjects = 0;
                                         ArrayList<Integer> projectsToDelete = askAndStoreGroupIdsInArray(scanner, false);
 
@@ -592,8 +616,10 @@ public class SerpisFP_IE28 {
                                             }
                                         }
 
-                                        if (deletedProjects == projectsToDelete.size()) {
+                                        if (deletedProjects == projectsToDelete.size() && deletedProjects != 0 ) {
                                             System.out.println("\n[✅]  All projects deleted succesfully.");
+                                        }else if (deletedProjects != 0){
+                                            System.out.println("\n[❌]  Oops! There was an error while trying to delete some projects.");
                                         }
 
                                         break;
@@ -622,6 +648,11 @@ public class SerpisFP_IE28 {
 
                                 switch (deleteGroupOption) {
                                     case 1:
+
+                                        List<Group> allGroups = groupDAO.selectAll();
+                                        System.out.println("List of Groups: ⬇️");
+                                        displayGroupList(allGroups);
+
                                         int deletedGroups = 0;
                                         ArrayList<Integer> groupsToDelete = askAndStoreGroupIdsInArray(scanner, false);
 
@@ -634,8 +665,10 @@ public class SerpisFP_IE28 {
                                             }
                                         }
 
-                                        if (deletedGroups == groupsToDelete.size()) {
+                                        if (deletedGroups == groupsToDelete.size() && deletedGroups != 0) {
                                             System.out.println("\n[✅]  All groups deleted successfully.");
+                                        }else if(deletedGroups != 0){
+                                            System.out.println("\n[❌]  Oops! There was an error while trying to delete some groups.");
                                         }
 
                                         break;

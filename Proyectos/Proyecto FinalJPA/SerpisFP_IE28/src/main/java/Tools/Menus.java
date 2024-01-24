@@ -69,7 +69,7 @@ public class Menus {
     public static void getDeleteOption(Boolean isAviable) {
         System.out.println("           ╔═══════════ Delete ═════════════╗");
         System.out.println("           ║ 1. Delete different items      ║");
-        if(isAviable){System.out.println( "           ║ 2. Delete different items      ║");}
+        if(isAviable){System.out.println( "           ║ 2. Delete all items            ║");}
         System.out.println("           ║ 0. EXIT                        ║");
         System.out.println("           ╚════════════════════════════════╝");
         System.out.print("Select an option: ");
@@ -131,9 +131,9 @@ public class Menus {
     }
     
     public static void projectHeader() {
-        System.out.println("+------------------+----------------------+---------------------+");
-        System.out.println("| Código Proyecto  |        Título        |  NIA del Estudiante |");
-        System.out.println("+------------------+----------------------+---------------------+");
+        System.out.println("+------------------+--------------------------+---------------------+");
+        System.out.println("| Código Proyecto  |        Título            |  NIA del Estudiante |");
+        System.out.println("+------------------+--------------------------+---------------------+");
     }
     
     public static void enrolmentHeader() {
@@ -290,31 +290,6 @@ public class Menus {
     private static boolean isValidNIA(int nia) {
         String niaStr = String.valueOf(nia);
         return niaStr.length() == 8 && niaStr.matches("\\d+");
-    }
-
-    
-    /**
-     * 
-     * @param scanner
-     * @return int
-     */
-    public static int getStudentFromUser(Scanner scanner) {
-        System.out.print("Enter student ID: ");
-        int studentId = getIntInput(scanner);
-
-        return studentId; 
-    }
-
-    /**
-     * 
-     * @param scanner
-     * @return int
-     */
-    public static int getModuleFromUser(Scanner scanner) {
-        System.out.print("Enter module ID: ");
-        int moduleId = getIntInput(scanner);
-        
-        return moduleId; 
     }
    
     /*

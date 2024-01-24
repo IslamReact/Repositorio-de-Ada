@@ -24,7 +24,7 @@ public class Tools {
      */
     public static void simulateConexionwaitTimeUser(){
         try {
-            System.out.println("Connecting...");
+            System.out.println("[ℹ️]  Connecting...");
             Thread.sleep(3000);
             System.out.println("[✅]  App succesfully connected with database!");
         } catch (InterruptedException e) {
@@ -144,9 +144,9 @@ public class Tools {
         ArrayList<Integer> groupIds = new ArrayList<>();
 
         if(isStudent){ 
-            System.out.println("Enter Nia's one by one (Type 0 to finish):");
+            System.out.println("\nEnter Nia's one by one (Type 0 to finish):");
         }else{
-            System.out.println("Enter IDs one by one (Type 0 to finish):");
+            System.out.println("\nEnter IDs one by one (Type 0 to finish):");
         }
         do {
             groupId = getIntInput(scanner);

@@ -17,11 +17,17 @@ import javax.persistence.EntityManager;
  */
 public class GroupController {
     
+    /**
+     * 
+     * @param em
+     * @param scanner
+     * @return Group
+     */
     public static Group askForGroup(EntityManager em, Scanner scanner) {
         GroupDAO groupDAO = new GroupDAO(em);
         List<Group> groupList = groupDAO.selectAll();
 
-        System.out.println("Available Groups:");
+        System.out.println("Available Groups: ⬇️");
         displayGroupList(groupList);
 
         while (true) {
@@ -39,7 +45,11 @@ public class GroupController {
         }
     }
     
-    private static void displayGroupList(List<Group> groupList) {
+    /**
+     * 
+     * @param groupList 
+     */
+    public static void displayGroupList(List<Group> groupList) {
         for (Group group : groupList) {
             System.out.println(group.toString());
         }

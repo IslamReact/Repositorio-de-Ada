@@ -76,28 +76,37 @@ public class StudentController {
         StudentDAO studentDAO = new StudentDAO(em);
         List<Student> studentList = studentDAO.getAllStudents();
 
-        System.out.println("Available Students:");
+        System.out.println("\nAvailable Students: ⬇️");
         displayStudentList(studentList);
 
         while (true) {
-            System.out.print("Enter the NIA of the student: ");
+            System.out.print("\nEnter the NIA of the student (Type 0 to exit): ");
             int studentNIA = getIntInput(scanner);
 
-            Student selectedStudent = studentDAO.getStudentById(studentNIA);
+            if (studentNIA == 0) {
+                return null;
+            }
 
-            if (selectedStudent != null) {
-                return selectedStudent;
+            if (String.valueOf(studentNIA).length() == 8) {
+                Student selectedStudent = studentDAO.getStudentById(studentNIA);
+
+                if (selectedStudent != null) {
+                    return selectedStudent;
+                } else {
+                    System.out.println("This student doesn't exist. Please enter a valid NIA.");
+                }
             } else {
-                System.out.println("This student doesn't exist. Please enter a valid NIA.");
+                System.out.println("Invalid NIA. Please enter a valid 8-digit NIA.");
             }
         }
     }
+
 
     /**
      * 
      * @param studentList 
      */
-    private static void displayStudentList(List<Student> studentList) {
+    public static void displayStudentList(List<Student> studentList) {
         for (Student student : studentList) {
             System.out.println(student.toString());
         }
@@ -113,12 +122,12 @@ public class StudentController {
         System.out.println("↘                                                               |");
         if (student != null) {
             System.out.print("Maker:");
-            System.out.println("    +---------------------------------------------------------------------------+");
+            System.out.println("    +-----------------------------------------------------------------------------+");
             System.out.println("|         " + student);
-            System.out.println("|         +---------------------------------------------------------------------------+");
+            System.out.println("|         +-----------------------------------------------------------------------------+");
         } else {
             System.out.println("  No students in this group.");
         }
-        System.out.println("+------------------+----------------------+---------------------+");
+        System.out.println("+------------------+--------------------------+---------------------+");
     }
 }
