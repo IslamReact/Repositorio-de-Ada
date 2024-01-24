@@ -12,17 +12,11 @@ Este repositorio contiene actividades y proyectos relacionados con el curso de A
 
 ### Actividades
 
-1. [Actividad 1](./Actividades/Actividad1): Descripción breve de la actividad y enlace al código fuente.
-
-2. [Actividad 2](./Actividades/Actividad2): Descripción breve de la actividad y enlace al código fuente.
 
 <!-- Agrega más actividades según sea necesario -->
 
 ### Proyectos
 
-1. [Proyecto 1](./Proyectos/Proyecto1): Descripción detallada del proyecto y enlace al repositorio completo.
-
-2. [Proyecto 2](./Proyectos/Proyecto2): Descripción detallada del proyecto y enlace al repositorio completo.
 
 <!-- Agrega más proyectos según sea necesario -->
 
