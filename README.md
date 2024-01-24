@@ -12,23 +12,27 @@ Este repositorio contiene actividades y proyectos relacionados con el curso de A
 
 ### Actividades
 
-1. [Actividad 1](./Actividades/Actividad1): Descripción breve de la actividad y enlace al código fuente.
-
-2. [Actividad 2](./Actividades/Actividad2): Descripción breve de la actividad y enlace al código fuente.
 
 <!-- Agrega más actividades según sea necesario -->
 
 ### Proyectos
 
-1. [Proyecto 1](./Proyectos/Proyecto1): Descripción detallada del proyecto y enlace al repositorio completo.
-
-2. [Proyecto 2](./Proyectos/Proyecto2): Descripción detallada del proyecto y enlace al repositorio completo.
 
 <!-- Agrega más proyectos según sea necesario -->
 
-## Contribuciones
+## Contribución
 
-Siéntete libre de contribuir a este repositorio mediante pull requests. ¡Toda ayuda es bienvenida!
+¡Tu contribución es bienvenida! Si encuentras errores, tienes sugerencias o deseas agregar tus propios ejercicios, sigue estos pasos:
+
+1. Haz un fork del repositorio.
+2. Crea una nueva rama: `git checkout -b feature/nueva-funcionalidad`.
+3. Realiza tus cambios y confirma: `git commit -m 'Añade nueva funcionalidad'`.
+4. Sube tus cambios: `git push origin feature/nueva-funcionalidad`.
+5. Abre una solicitud de extracción.
+
+## Sugerencias y Problemas
+
+Si encuentras algún problema o tienes sugerencias para mejorar los ejercicios, por favor, abre un [issue](https://github.com/tu-usuario/tu-repositorio/issues). Estamos aquí para ayudarnos mutuamente a aprender.
 
 ## Contacto
 
