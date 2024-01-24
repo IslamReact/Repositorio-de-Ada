@@ -1,0 +1,11 @@
+Management/FilesManagement/ExportXML.class
+Domain/Poi.class
+Management/MangementMongoDB.class
+ConexionBD/ConexionMongoDB.class
+Management/FilesManagement/ImportXML.class
+ConexionBD/ConexionMySQL.class
+Management/Tools.class
+Management/ManagementPoi.class
+Management/SynchronizationService.class
+ConexionBD/UserMongoDAO.class
+ConexionBD/PoiDAO.class

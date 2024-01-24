@@ -1,0 +1,32 @@
+[Points Of Interest]
+
+Number Of Entries=4
+
+<poid>23</poid>
+<latitude>92.3242</latitude>
+<longitude>2.3245</longitude>
+<country>Spain</country>
+<city>Madrid</city>
+<description>Santiago Bernabeu</description>
+<updated>2023-11-15</updated>
+<poid>82</poid>
+<latitude>87.2979</latitude>
+<longitude>723.329</longitude>
+<country>Spain</country>
+<city>Barcelona</city>
+<description>Sagrada familia</description>
+<updated>2023-11-15</updated>
+<poid>92</poid>
+<latitude>-32.323</latitude>
+<longitude>82.3234</longitude>
+<country>Italy</country>
+<city>Rome</city>
+<description>Torre de pizza</description>
+<updated>2023-11-15</updated>
+<poid>98</poid>
+<latitude>7.0923</latitude>
+<longitude>7.92832</longitude>
+<country>Spain</country>
+<city>Ibiza</city>
+<description>Cala d'Hort</description>
+<updated>2023-11-15</updated>
