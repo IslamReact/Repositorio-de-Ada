@@ -8,18 +8,6 @@ Este repositorio contiene actividades y proyectos relacionados con el curso de A
 
 - **Proyectos:** Carpeta que almacena proyectos más extensos y complejos desarrollados a lo largo del curso.
 
-## Contenido
-
-### Actividades
-
-
-<!-- Agrega más actividades según sea necesario -->
-
-### Proyectos
-
-
-<!-- Agrega más proyectos según sea necesario -->
-
 ## Contribución
 
 ¡Tu contribución es bienvenida! Si encuentras errores, tienes sugerencias o deseas agregar tus propios ejercicios, sigue estos pasos:
