@@ -24,7 +24,7 @@ Si encuentras algún problema o tienes sugerencias para mejorar los ejercicios, 
 
 ## Contacto
 
-- [Correo Electrónico](mailto:tucorreo@ejemplo.com)
-- [LinkedIn](https://www.linkedin.com/in/tunombre)
+- [Correo Electrónico](islamelmrabet04@gmail.com)
+- [LinkedIn](https://www.linkedin.com/in/islam-el-mrabet-larhzaoui-b0441629a/)
 
 ¡Gracias por visitar el repositorio!
