@@ -1,4 +1,5 @@
 Management/FilesManagement/ExportXML.class
+com/mycompany/puntodeinteresada/PuntoDeInteresADA.class
 Domain/Poi.class
 Management/MangementMongoDB.class
 ConexionBD/ConexionMongoDB.class
