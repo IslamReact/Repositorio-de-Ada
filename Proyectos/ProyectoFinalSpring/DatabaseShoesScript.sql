@@ -1,0 +1,1 @@
+CREATE DATABASE shoes_db;
